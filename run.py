@@ -21,7 +21,12 @@ def create_ships(board):
 
 def Guess():
     column = input('Guess between column numbers 1-5')
+    if column not in '12345':
+        print("Invalid answer")
     row = input('Guess between row numbers 1-5')
+    if row not in '12345':
+        print("Invalid Answer")
 
 def Run_Game():
-
+    HIDDEN_BOARD
+    GUESS_BOARD
