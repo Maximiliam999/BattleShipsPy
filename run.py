@@ -1,3 +1,5 @@
+from random import randint
+
 HIDDEN_BOARD = [[' '] * 5 for x in range(5)]
 GUESS_BOARD = [[' '] * 5 for x in range(5)]
 
@@ -16,17 +18,47 @@ def create_ships(board):
         while board[ship_row][ship_column] == "X":
             ship_column, ship_row = randint(0, 4), randint(0, 4)
         board[ship_row][ship_column] = 'X'
-       
+        
 
 
-def Guess():
-    column = input('Guess between column numbers 1-5')
-    if column not in '12345':
-        print("Invalid answer")
-    row = input('Guess between row numbers 1-5')
-    if row not in '12345':
-        print("Invalid Answer")
+def User_guess():
+    try:
+        column = input('Guess between column numbers 1-5: ')
+        row = input('Guess between row numbers 1-5: ')
+    except ValueError:
+        print("Invalid answer enter a number between 1-5")
+    return int(row) -1, int(column) -1
 
-def Run_Game():
-    HIDDEN_BOARD
-    GUESS_BOARD
+
+def hit_ships(board):
+    hits = 0 
+    for row in board:
+        for column in row:
+            if column == 'X':
+                hits += 1
+    return hits 
+    
+print_board(GUESS_BOARD)
+#print_board(HIDDEN_BOARD)
+
+##def Run_Game():
+
+rounds = 0
+while rounds < 8:
+    print('Welcome to Battleships!')
+    row,column = User_guess()
+    if [row][column]  == "X":
+        print('It"s A Hit!')
+        rounds += 1
+    elif [row][column] != "-":
+        print('Already tried this one!')
+    else:
+        print('It"s A Miss!') 
+
+
+create_ships(board)
+create_ships(HIDDEN_BOARD)
+
+
+    
+
