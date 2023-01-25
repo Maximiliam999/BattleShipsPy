@@ -7,7 +7,7 @@ PLAYER_BOARD = [[' '] * 5 for x in range(5)]
 def print_board(board):
     row_number = 1
     for row in board:
-        print('%d|%s' % (row_number, "|".join(row)))
+        print('%d|%s' % (row_number,  "|".join(row)))
         row_number += 1      
 
 
@@ -27,7 +27,7 @@ def User_guess():
         column = input('Guess between column numbers 1-5: ')
     except ValueError:
         print("Invalid answer enter a number between 1-5")
-    return int(row) -1, int(column) 
+    return int(row) -1, int(column) -1
 
 
 def hit_ships(board):
@@ -53,7 +53,7 @@ while rounds < 7:
     if  HIDDEN_BOARD[row][column]  == "X":
         print('It"s A Hit!')
         rounds += 1
-    elif [row][column] == "-":
+    elif HIDDEN_BOARD[row][column] == "-":
         print('Already tried this one!')
     else:
         print('It"s A Miss!')
