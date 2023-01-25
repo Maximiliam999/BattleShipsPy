@@ -7,9 +7,9 @@ PLAYER_BOARD = [[' '] * 5 for x in range(5)]
 def print_board(board):
     row_number = 1
     for row in board:
-        print('%d|%s' % (row_number,  "|".join(row)))
+        print('%d|%s' % (row_number,  "|".join(row))+ "|")
         row_number += 1      
-
+    print('------------')
 
 
 def create_ships(board):
@@ -44,8 +44,8 @@ def hit_ships(board):
 
 create_ships(PLAYER_BOARD)
 create_ships(HIDDEN_BOARD)
-rounds = 0
-while rounds < 7:
+rounds = 7
+while rounds > 0:
     print_board(PLAYER_BOARD)
     print_board(HIDDEN_BOARD)
     print('Welcome to Battleships!')
@@ -53,6 +53,7 @@ while rounds < 7:
     if  HIDDEN_BOARD[row][column]  == "X":
         print('It"s A Hit!')
         rounds += 1
+        HIDDEN_BOARD[row][column] = "-"
     elif HIDDEN_BOARD[row][column] == "-":
         print('Already tried this one!')
     else:
@@ -60,7 +61,12 @@ while rounds < 7:
         HIDDEN_BOARD[row][column] = '-'
         rounds +=1
 
-
+    if hit_ships() == 5:
+        print('You won you have sunk all the Battleships')
+        break
+    if rounds == 7:
+        print('Game over')
+        break
 
 
     
