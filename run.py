@@ -33,8 +33,8 @@ def user_guess():
     they want to shoot and will trigger a ValueError if input is not a number  
     """ 
     try:
-        row = int(input('Guess between row numbers 1-5: '))
-        column = int(input('Guess between column numbers 1-5: '))
+        row = int(input('Guess between row numbers 1-5:'\n))
+        column = int(input('Guess between column numbers 1-5:'))
     except ValueError:
         print("Invalid answer enter a number between 1-5")
     except TypeError:
