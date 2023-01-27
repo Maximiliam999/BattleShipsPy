@@ -37,7 +37,7 @@ def user_guess():
         print("Invalid answer enter a number between 1-5")
     except TypeError:
         print("Object not supported")
-    return int(row) -1, int(column) -1
+    return int(row) - 1, int(column) - 1
 
 def hit_ships(board):
     """
