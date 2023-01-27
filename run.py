@@ -14,7 +14,6 @@ def print_board(board):
         row_number += 1      
     print('------------')
 
-
 def create_ships(board):
     """
     This function will create 5 ships on random places on the board
@@ -25,10 +24,8 @@ def create_ships(board):
         while board[ship_row][ship_column] == "X":
             ship_column, ship_row = randint(0, 4), randint(0, 4)
         board[ship_row][ship_column] = 'X'
-        
 
-
-def User_guess():
+def user_guess():
     """
     Take player guess by requesting input on which row and column 
     they want to shoot and will trigger a ValueError if input is not a number  
@@ -42,7 +39,6 @@ def User_guess():
         print("Object not supported")
     return int(row) -1, int(column) -1
 
-
 def hit_ships(board):
     """
     Count hits by going through each row and column looking for X which is a ship on the board 
@@ -54,24 +50,17 @@ def hit_ships(board):
             if column == 'X':
                 hits += 1
     return hits 
-    
-    
-
-
-
 """
-
 Run game will count rounds, subtracting one every new guess, print result of round and print if you win or lose after 
 7 rounds.
 """
-
 
 create_ships(HIDDEN_BOARD)
 rounds = 7
 while rounds > 0:
     print_board(GUESS_BOARD)
     print('Welcome to Battleships!')
-    row,column = User_guess()
+    row,column = user_guess()
     if  HIDDEN_BOARD[row][column]  == "X":
         print('It"s A Hit!')
         rounds -= 1
@@ -81,6 +70,7 @@ while rounds > 0:
     else:
         print('It"s A Miss!')
         HIDDEN_BOARD[row][column] = '-'
+        GUESS_BOARD[row][column] = '*'
         rounds -=1
     if  hit_ships(GUESS_BOARD) == 5:
         print('You won you have sunk all the Battleships')
@@ -88,7 +78,3 @@ while rounds > 0:
     if rounds == 7:
         print('Game over')
         break
-
-
-    
-
