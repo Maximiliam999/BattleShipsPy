@@ -14,6 +14,7 @@ def print_board(board):
         row_number += 1      
     print('------------')
 
+
 def create_ships(board):
     """
     This function will create 5 ships on random places on the board
@@ -24,6 +25,7 @@ def create_ships(board):
         while board[ship_row][ship_column] == "X":
             ship_column, ship_row = randint(0, 4), randint(0, 4)
         board[ship_row][ship_column] = 'X'
+
 
 def user_guess():
     """
@@ -39,6 +41,7 @@ def user_guess():
         print("Object not supported")
     return int(row) - 1, int(column) - 1
 
+
 def hit_ships(board):
     """
     Count hits by going through each row and column looking for X which is a 
@@ -51,11 +54,13 @@ def hit_ships(board):
                 hits += 1
     return hits 
 
+
 def game_rules():
     print('The game is about shooting down the computers ships, you select a')
     print('row and a column and get 10 guesses to try to')
-    print(' shoot down all 5 of the enemy boats')
-    print(' X marks your hits and the * your misses')
+    print('shoot down all 5 of the enemy boats')
+    print('X marks your hits and the * your misses')
+
 
 def run_game():
     game_rules()
@@ -65,7 +70,7 @@ def run_game():
         print_board(GUESS_BOARD)
         print('Welcome to Battleships!')
         row, column = user_guess()
-        if HIDDEN_BOARD[row][column]  == "X":
+        if HIDDEN_BOARD[row][column] == "X":
             print('It"s A Hit!')
             print(f'Rounds left, {rounds}')
             rounds -= 1
@@ -77,12 +82,13 @@ def run_game():
             print(f'Rounds left, {rounds}')
             HIDDEN_BOARD[row][column] = '-'
             GUESS_BOARD[row][column] = '*'
-            rounds -=1
+            rounds -= 1
         if hit_ships(GUESS_BOARD) == 5:
             print('You won you have sunk all the Battleships')
             break
         if rounds == 0:
             print('Game over! no more guesses')
             break
+
 
 run_game()
