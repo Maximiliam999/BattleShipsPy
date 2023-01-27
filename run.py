@@ -6,12 +6,12 @@ GUESS_BOARD = [[' '] * 5 for x in range(5)]
 
 def print_board(board):
     """
-    Print board to terminal.  
+    Print board to terminal.
     """
     row_number = 1
     for row in board:
         print('%d|%s' % (row_number,  "|".join(row)) + "|")
-        row_number += 1      
+        row_number += 1    
     print('------------')
 
 

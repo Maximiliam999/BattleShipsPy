@@ -1,31 +1,45 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Last Battleship
 
-Welcome Maximiliam999,
+Last Battleship is a Python terminal game where users can challenge the computer
+by destroying all their ships in 10 guesses. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Live preview of my project](assets/images/livepreview.png)
 
-## Reminders
+## How to play
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Last Battlship is based on the original battleship game but with some diffrences.
 
-## Creating the Heroku app
+In this version a guessing board, showing your guesses is generated for the user and another hidden one is created for the computer. 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+You have 10 guesses to shoot down all of the enemy ships and after your game will end.  
 
-1. `heroku/python`
-2. `heroku/nodejs`
+If you hit all 5 ships it will print that you won the game and the game will end. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Misses are marked with * and hits with X 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Features
+- Random board generation
+    - Ships are randomly generated on the hidden computer board
+    - Guess board generated to show your guesses 
+- Rules 
+    - Game rules will be printed out on the terminal
+- Play against the computer
+- Accepts user inputs
+- Count guesses and show how many are left 
+- Input validation and error-checking
+    - Cannot input number larger than 5
+    - Must input a number 
+    - Can not enter same guess twice  
+- Future Features
+    - Make another board user and let computer guess user ship location 
+    - User can choose themselves where they want the ships to be 
+    
+## Running Tests
+- Passed the code through PEP8 linter and only problem is trailing whitespace
+- Given invalid inputs: same input twice, a string when numbers is expected, out of bounds input 
+- Tested in local terminal and the Code Institute Heroku terminal
 
-Connect your GitHub repository and deploy as normal.
+## Bugs
+- My if statment on line 95 that 
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+![Live preview of my project](assets/images/program.png)
