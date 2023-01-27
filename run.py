@@ -10,7 +10,7 @@ def print_board(board):
     """
     row_number = 1
     for row in board:
-        print('%d|%s' % (row_number,  "|".join(row))+ "|")
+        print('%d|%s' % (row_number,  "|".join(row)) + "|")
         row_number += 1      
     print('------------')
 
@@ -63,12 +63,14 @@ while rounds > 0:
     row,column = user_guess()
     if  HIDDEN_BOARD[row][column]  == "X":
         print('It"s A Hit!')
+        print(f'Rounds left, {rounds}')
         rounds -= 1
         GUESS_BOARD[row][column] = "X"
     elif HIDDEN_BOARD[row][column] == "-":
         print('Already tried this one!')
     else:
         print('It"s A Miss!')
+        print(f'Rounds left, {rounds}')
         HIDDEN_BOARD[row][column] = '-'
         GUESS_BOARD[row][column] = '*'
         rounds -=1
