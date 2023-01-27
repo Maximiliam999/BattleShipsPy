@@ -41,8 +41,8 @@ def user_guess():
 
 def hit_ships(board):
     """
-    Count hits by going through each row and column looking for X which is a ship on the board 
-    and adds 1 if it finds it  
+    Count hits by going through each row and column looking for X which is a 
+    ship on the board and adds 1 if it finds it.  
     """
     hits = 0 
     for row in board:
@@ -50,33 +50,37 @@ def hit_ships(board):
             if column == 'X':
                 hits += 1
     return hits 
-"""
-Run game will count rounds, subtracting one every new guess, print result of round and print if you win or lose after 
-7 rounds.
-"""
 
-create_ships(HIDDEN_BOARD)
-rounds = 10
-while rounds > 0:
-    print_board(GUESS_BOARD)
-    print('Welcome to Battleships!')
-    row,column = user_guess()
-    if  HIDDEN_BOARD[row][column]  == "X":
-        print('It"s A Hit!')
-        print(f'Rounds left, {rounds}')
-        rounds -= 1
-        GUESS_BOARD[row][column] = "X"
-    elif HIDDEN_BOARD[row][column] == "-":
-        print('Already tried this one!')
-    else:
-        print('It"s A Miss!')
-        print(f'Rounds left, {rounds}')
-        HIDDEN_BOARD[row][column] = '-'
-        GUESS_BOARD[row][column] = '*'
-        rounds -=1
-    if  hit_ships(GUESS_BOARD) == 5:
-        print('You won you have sunk all the Battleships')
-        break
-    if rounds == 0:
-        print('Game over! no more guesses')
-        break
+def game_rules():
+    print('The game is about shooting down the computers ships, you select a row and a column and get 10 guesses to try to shoot down all 5 of the enemy boats')
+    print('the X marks your hits and the * your misses ')
+
+def run_game():
+    game_rules()
+    create_ships(HIDDEN_BOARD)
+    rounds = 10
+    while rounds > 0:
+        print_board(GUESS_BOARD)
+        print('Welcome to Battleships!')
+        row, column = user_guess()
+        if HIDDEN_BOARD[row][column]  == "X":
+            print('It"s A Hit!')
+            print(f'Rounds left, {rounds}')
+            rounds -= 1
+            GUESS_BOARD[row][column] = "X"
+        elif HIDDEN_BOARD[row][column] == "-":
+            print('Already tried this one!')
+        else:
+            print('It"s A Miss!')
+            print(f'Rounds left, {rounds}')
+            HIDDEN_BOARD[row][column] = '-'
+            GUESS_BOARD[row][column] = '*'
+            rounds -=1
+        if hit_ships(GUESS_BOARD) == 5:
+            print('You won you have sunk all the Battleships')
+            break
+        if rounds == 0:
+            print('Game over! no more guesses')
+            break
+
+run_game()
