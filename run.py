@@ -56,7 +56,7 @@ Run game will count rounds, subtracting one every new guess, print result of rou
 """
 
 create_ships(HIDDEN_BOARD)
-rounds = 7
+rounds = 10
 while rounds > 0:
     print_board(GUESS_BOARD)
     print('Welcome to Battleships!')
@@ -75,6 +75,6 @@ while rounds > 0:
     if  hit_ships(GUESS_BOARD) == 5:
         print('You won you have sunk all the Battleships')
         break
-    if rounds == 7:
-        print('Game over')
+    if rounds == 0:
+        print('Game over! no more guesses')
         break
