@@ -52,8 +52,10 @@ def hit_ships(board):
     return hits 
 
 def game_rules():
-    print('The game is about shooting down the computers ships, you select a row and a column and get 10 guesses to try to shoot down all 5 of the enemy boats')
-    print('the X marks your hits and the * your misses ')
+    print('The game is about shooting down the computers ships, you select a')
+    print('row and a column and get 10 guesses to try to')
+    print(' shoot down all 5 of the enemy boats')
+    print(' X marks your hits and the * your misses')
 
 def run_game():
     game_rules()
