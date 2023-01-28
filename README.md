@@ -1,7 +1,7 @@
 # Last Battleship
 
 Last Battleship is a Python terminal game where users can challenge the computer
-by destroying all their ships in 10 guesses. 
+by destroying all their ships in 10 guesses. Underneath is a live preview.
 
 ![Live preview of my project](assets/images/livepreview.png)
 
@@ -40,6 +40,22 @@ Misses are marked with * and hits with X
 - Tested in local terminal and the Code Institute Heroku terminal
 
 ## Bugs
-- My if statment on line 95 that 
+- My if statment on line 95 I put in the same value as when the rounds were defined and because it supposed to count down from 10 to 0 it didn't work until I switched it to 0.
+
+## Validator Testeing
+- PEP8
+    - Only error showing is trailing whitespace which doesn't seem to affect the functianlity of the code 
+
+## Deployment
+I used Code Institute's mock terminal for Heroku to deploy this project.
+- Steps for deployment 
+    - Go to Heroku and create a new app
+    - Choose GitHub as your deployment method
+    - Choose your profile and write the name of the repository you want to deploy
+    - Click deploy and wait until it has finished building 
+    
+## Credits 
+
+- 
 
 ![Live preview of my project](assets/images/program.png)
