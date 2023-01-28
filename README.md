@@ -23,18 +23,20 @@ Misses are marked with * and hits with X
     - Guess board generated to show your guesses 
 - Rules 
     - Game rules will be printed out on the terminal
-    
-![Screenshot of rules](assets/images/rules.png "rules for the game")
+
+![Screenshot of rules](assets/images/rules.png "Rules for the game")
 
 - Play against the computer
 - Accepts user inputs
 
-![Screenshot of user input](assets/images/input.png "asking for input")
+![Screenshot of user input](assets/images/input.png "Asking for input")
 - Count guesses and show how many are left 
 - Input validation and error-checking
     - Cannot input number larger than 5
     - Must input a number 
     - Can not enter same guess twice  
+![Screenshot of error checks](/assets/images/errorchecks.png "Error checks")
+
 - Future Features
     - Make another board user and let computer guess user ship location 
     - User can choose themselves where they want the ships to be 
@@ -46,6 +48,7 @@ Misses are marked with * and hits with X
 
 ## Bugs
 - My if statment on line 95 I put in the same value as when the rounds were defined and because it supposed to count down from 10 to 0 it didn't work until I switched it to 0.
+- forgot to add a "-" to hidden board on line 84
 
 ## Validator Testeing
 - PEP8
@@ -63,4 +66,3 @@ I used Code Institute's mock terminal for Heroku to deploy this project.
 
 - Took inspiratons from https://github.com/gbrough/battleship/blob/main/single_player.py for print_board, create_ships and hit_ships functions
 
-![Live preview of my project](assets/images/program.png)
