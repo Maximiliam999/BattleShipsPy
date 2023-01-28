@@ -3,7 +3,7 @@
 Last Battleship is a Python terminal game where users can challenge the computer
 by destroying all their ships in 10 guesses. Underneath is a live preview.
 
-![Live preview of my project](assets/images/livepreview.png)
+![Live preview of my project](assets/images/livepreview.png "live preview")
 
 ## How to play
 
@@ -23,8 +23,13 @@ Misses are marked with * and hits with X
     - Guess board generated to show your guesses 
 - Rules 
     - Game rules will be printed out on the terminal
+    
+![Screenshot of rules](assets/images/rules.png "rules for the game")
+
 - Play against the computer
 - Accepts user inputs
+
+![Screenshot of user input](assets/images/input.png "asking for input")
 - Count guesses and show how many are left 
 - Input validation and error-checking
     - Cannot input number larger than 5
@@ -56,6 +61,6 @@ I used Code Institute's mock terminal for Heroku to deploy this project.
     
 ## Credits 
 
-- 
+- Took inspiratons from https://github.com/gbrough/battleship/blob/main/single_player.py for print_board, create_ships and hit_ships functions
 
 ![Live preview of my project](assets/images/program.png)

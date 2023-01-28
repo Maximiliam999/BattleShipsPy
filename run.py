@@ -81,6 +81,7 @@ def run_game():
             print(f'Rounds left, {rounds}')
             rounds -= 1
             GUESS_BOARD[row][column] = "X"
+            HIDDEN_BOARD[row][column] = '-'
         elif HIDDEN_BOARD[row][column] == "-":
             print('Already tried this one!')
         else:
