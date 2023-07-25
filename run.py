@@ -40,9 +40,25 @@ def user_guess():
         break
         print(column)
         break
-    return int(row) - 1, int(column) - 1
+    
 
+        user_row = row
+        validate_guess(user_row)
+        if validate_guess(user_row):
+            break
+        user_column = column
+        validate_guess(user_column)
+        if validate_guess(user_column):
+            break
 
+    return user_row
+    return user_column
+
+def validate_guess():
+    try:
+        [int(value) for value in values]
+        if values != 2:
+            raise ValueError (f"Exactly number 2 you {values}"):
 
 def hit_ships(board):
     """
