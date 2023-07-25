@@ -48,7 +48,8 @@ Misses are marked with * and hits with X
 
 ## Bugs
 - My if statment on line 95 I put in the same value as when the rounds were defined and because it supposed to count down from 10 to 0 it didn't work until I switched it to 0.
-- forgot to add a "-" to hidden board on line 84
+- Forgot to add a "-" to hidden board on line 84
+- Acceptence of empty/invalid input causes the application to crash.
 
 ## Validator Testeing
 - PEP8
