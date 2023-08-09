@@ -32,33 +32,23 @@ def user_guess():
     Take player guess by requesting input on which row and column 
     they want to shoot and will trigger a ValueError if input is not a number  
     """ 
-   
-    row = int(input('Guess between row numbers 1-5:\n'))
-    column = int(input('Guess between column numbers 1-5:\n'))
     while True:
-        print(row)
+        row = int(input('Guess between row numbers 1-5:\n'))
+        column = int(input('Guess between column numbers 1-5:\n'))
+        if row > 5 or row < 1:
+            print('Guess between 1-5')
         break
-        print(column)
+        
+        if column > 5 or column < 1:
+            print('Guess between 1-5')
         break
     
+    return int(row) - 1, int(column) - 1
 
-        user_row = row
-        validate_guess(user_row)
-        if validate_guess(user_row):
-            break
-        user_column = column
-        validate_guess(user_column)
-        if validate_guess(user_column):
-            break
-
-    return user_row
-    return user_column
 
 def validate_guess():
     try:
-        [int(value) for value in values]
-        if values != 2:
-            raise ValueError (f"Exactly number 2 you {values}"):
+        
 
 def hit_ships(board):
     """
