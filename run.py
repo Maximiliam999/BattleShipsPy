@@ -33,22 +33,20 @@ def user_guess():
     they want to shoot and will trigger a ValueError if input is not a number  
     """ 
     while True:
-        row = int(input('Guess between row numbers 1-5:\n'))
-        column = int(input('Guess between column numbers 1-5:\n'))
-        if row > 5 or row < 1:
-            print('Guess between 1-5')
-        break
-        
-        if column > 5 or column < 1:
-            print('Guess between 1-5')
-        break
-    
-    return int(row) - 1, int(column) - 1
+        try:
+            row = int(input('Guess between row numbers 1-5:\n'))
+            if 1 <= row <= 5:
+                return int(row) - 1
+            column = int(input('Guess between column numbers 1-5:\n'))
+            if 1 <= column <= 5:
+                return int(column) - 1
+            else:
+                print("Guess must be between 1-5")
 
+        except ValueError:
+            print("Invalid input pick a number between 1-5")
+   
 
-def validate_guess():
-    try:
-        
 
 def hit_ships(board):
     """
@@ -83,7 +81,8 @@ def run_game():
     while rounds > 0:
         print_board(GUESS_BOARD)
         print('Welcome to Battleships!')
-        row, column = user_guess()
+        row = user_guess() 
+        column = user_guess()
         if HIDDEN_BOARD[row][column] == "X":
             print('It"s A Hit!')
             print(f'Rounds left, {rounds}')
