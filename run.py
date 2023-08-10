@@ -34,10 +34,10 @@ def user_guess():
     """ 
     while True:
         try:
-            row = int(input('Guess between row numbers 1-5:\n'))
+            row = int(input('Guess a number between 1-5:\n'))
             if 1 <= row <= 5:
                 return int(row) - 1
-            column = int(input('Guess between column numbers 1-5:\n'))
+            column = int(input('Guess a number between 1-5:\n'))
             if 1 <= column <= 5:
                 return int(column) - 1
             else:
