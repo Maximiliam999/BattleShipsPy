@@ -29,8 +29,8 @@ def create_ships(board):
 
 def user_guess():
     """
-    Take player guess by requesting input on which row and column 
-    they want to shoot and will trigger a ValueError if input is not a number  
+    Take player guess by requesting input on which row and column
+    they want to shoot and will trigger a ValueError if input is not a number
     """
     while True:
         try:
@@ -58,7 +58,7 @@ def hit_ships(board):
 
 
 def game_rules():
-    """ 
+    """
     This function will print out the game rules
     """
     print('The game is about shooting down the computers ships, you select a')
