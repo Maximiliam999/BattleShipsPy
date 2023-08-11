@@ -11,14 +11,14 @@ def print_board(board):
     row_number = 1
     for row in board:
         print('%d|%s' % (row_number,  "|".join(row)) + "|")
-        row_number += 1    
+        row_number += 1
     print('------------')
 
 
 def create_ships(board):
     """
     This function will create 5 ships on random places on the board
-    by choosing a random integer between 0 and 4.   
+    by choosing a random integer between 0 and 4.
     """
     for ship in range(5):
         ship_column, ship_row = randint(0, 4), randint(0, 4)
@@ -31,37 +31,36 @@ def user_guess():
     """
     Take player guess by requesting input on which row and column 
     they want to shoot and will trigger a ValueError if input is not a number  
-    """ 
+    """
     while True:
         try:
-            row = int(input('Guess a number between 1-5:\n'))
-            if 1 <= row <= 5:
-                return int(row) - 1
-            column = int(input('Guess a number between 1-5:\n'))
-            if 1 <= column <= 5:
-                return int(column) - 1
+            user_input = int(input('Guess a number between 1-5:\n'))
+            if user_input > 0 and user_input < 6:
+                return int(user_input) - 1
             else:
                 print("Guess must be between 1-5")
 
         except ValueError:
             print("Invalid input pick a number between 1-5")
-   
 
 
 def hit_ships(board):
     """
-    Count hits by going through each row and column looking for X which is a 
-    ship on the board and adds 1 if it finds it.  
+    Count hits by going through each row and column looking for X which is a
+    ship on the board and adds 1 if it finds it.
     """
-    hits = 0 
+    hits = 0
     for row in board:
         for column in row:
             if column == 'X':
                 hits += 1
-    return hits 
+    return hits
 
 
 def game_rules():
+    """ 
+    This function will print out the game rules
+    """
     print('The game is about shooting down the computers ships, you select a')
     print('row and a column and get 10 guesses to try to')
     print('shoot down all 5 of the enemy boats')
@@ -70,10 +69,10 @@ def game_rules():
 
 def run_game():
     """
-    Run the game checking if the user hit the target, missed or shoot the same 
+    Run the game checking if the user hit the target, missed or shoot the same
     row and column.
-    counting rounds and printing them for the user to see how many they have 
-    left 
+    counting rounds and printing them for the user to see how many they have
+    left
     """
     game_rules()
     create_ships(HIDDEN_BOARD)
@@ -81,7 +80,7 @@ def run_game():
     while rounds > 0:
         print_board(GUESS_BOARD)
         print('Welcome to Battleships!')
-        row = user_guess() 
+        row = user_guess()
         column = user_guess()
         if HIDDEN_BOARD[row][column] == "X":
             print('It"s A Hit!')
